@@ -35,11 +35,12 @@ class BooksList {
     saveButton(e) {
         const author = document.getElementById("bookAuthor").value
         const title = document.getElementById("bookTitle").value
-        e.preventDefault() //to stop event 
+    
         if(author === "" || title === "") {
             return
         }
         
+        e.preventDefault() //to stop event 
         const book = new Book(title, author)
         this.addBook(book)
     }
@@ -192,26 +193,26 @@ class Storage {
     }
 }
 
-const storage = new Storage()
+const storage = new Storage();
 
 
-// // Example starter JavaScript for disabling form submissions if there are invalid fields
-// (function () {
-//     'use strict'
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+    'use strict'
   
-//     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//     var forms = document.querySelectorAll('.needs-validation')
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
   
-//     // Loop over them and prevent submission
-//     Array.prototype.slice.call(forms)
-//       .forEach(function (form) {
-//         form.addEventListener('submit', function (event) {
-//           if (!form.checkValidity()) {
-//             event.preventDefault()
-//             event.stopPropagation()
-//           }
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
   
-//           form.classList.add('was-validated')
-//         }, false)
-//       })
-//   })()
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
